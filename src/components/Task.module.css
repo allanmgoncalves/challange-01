@@ -15,7 +15,7 @@
 	margin-top: 0.75rem;
 }
 
-.taskCard input[type='radio'] {
+.taskCard input[type='checkbox'] {
 	appearance: none;
 	-webkit-appearance: none;
 	min-width: 18px;
@@ -31,15 +31,15 @@
 	cursor: pointer;
 }
 
-.taskCard input[type='radio']:hover {
+.taskCard input[type='checkbox']:hover {
 	background-color: rgba(30, 111, 159, 0.2);
 }
 
-.taskCard input[type='radio']:checked {
+.taskCard input[type='checkbox']:checked {
 	background: var(--purple-dark);
 	border: none;
 }
-.taskCard input[type='radio']:checked::after {
+.taskCard input[type='checkbox']:checked::after {
 	content: url('../assets/check-bold.svg');
 	display: flex;
 	align-items: center;
@@ -47,11 +47,11 @@
 	line-height: 1.125rem;
 }
 
-.taskCard input[type='radio']:checked:hover {
+.taskCard input[type='checkbox']:checked:hover {
 	background: var(--purple);
 }
 
-.taskCard input[type='radio']:checked + label {
+.taskCard input[type='checkbox']:checked + label {
 	color: var(--gray-300);
 	text-decoration: line-through;
 }

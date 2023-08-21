@@ -13,10 +13,10 @@ interface TaskProps extends Task {
 	onDeletedTask: () => void;
 }
 
-export function Task({ isCompleted, content, onCompletedTask, onDeletedTask }: TaskProps) {
+export function Task({ id, isCompleted, content, onCompletedTask, onDeletedTask }: TaskProps) {
 	return (
 		<li className={styles.taskCard}>
-			<input type="radio" checked={isCompleted} onChange={onCompletedTask} />
+			<input type="checkbox" name={id} checked={isCompleted} onChange={onCompletedTask} />
 			<label>{content}</label>
 			<button type="button" title="Delete Task" onClick={onDeletedTask}>
 				<Trash size={18} weight="regular" />

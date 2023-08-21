@@ -9,20 +9,9 @@ import { Task } from './components/Task';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 export function App() {
-	const [taskList, setTaskList] = useState([
-		{
-			id: uuidv4(),
-			isCompleted: false,
-			content: 'Fazer o estudo bíblico diário',
-		},
-		{
-			id: uuidv4(),
-			isCompleted: false,
-			content: 'Ler o livro com minha esposa "Uma vida com propósito"',
-		},
-	]);
-	const [newTaskText, setNewTaskText] = useState('');
+	const [taskList, setTaskList] = useState<Task[]>([]);
 	const totalOfTasks: number = taskList.length;
+	const [newTaskText, setNewTaskText] = useState('');
 	const [completedTasksCount, setCompletedTasksCount] = useState(0);
 
 	function handleCreateNewTask(event: FormEvent) {
@@ -56,7 +45,6 @@ export function App() {
 				setCompletedTasksCount(state => {
 					return state + 1;
 				});
-				console.log(updatedTaskList);
 				return updatedTaskList;
 			}
 			return task;
