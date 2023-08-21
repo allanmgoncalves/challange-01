@@ -28,9 +28,9 @@ export function App() {
 
 	function handleDeletedTask(id: string) {
 		const newTaskList = taskList.filter(task => task.id !== id);
-		setCompletedTasksCount(state => {
-			return state - 1;
-		});
+		const newCompletedTasksCount = taskList.filter(task => task.isCompleted !== true);
+		setCompletedTasksCount(newCompletedTasksCount.length);
+
 		setTaskList(newTaskList);
 	}
 
@@ -42,9 +42,9 @@ export function App() {
 					isCompleted: !task.isCompleted,
 				};
 
-				setCompletedTasksCount(state => {
-					return state + 1;
-				});
+				const newCompletedTasksCount = taskList.filter(task => task.isCompleted !== true);
+				setCompletedTasksCount(newCompletedTasksCount.length);
+
 				return updatedTaskList;
 			}
 			return task;
