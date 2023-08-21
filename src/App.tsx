@@ -28,9 +28,8 @@ export function App() {
 
 	function handleDeletedTask(id: string) {
 		const newTaskList = taskList.filter(task => task.id !== id);
-		const newCompletedTasksCount = taskList.filter(task => task.isCompleted !== true);
-		setCompletedTasksCount(newCompletedTasksCount.length);
-
+		const totalOfTasksUpdated = newTaskList.filter(item => item.isCompleted);
+		setCompletedTasksCount(totalOfTasksUpdated.length);
 		setTaskList(newTaskList);
 	}
 
@@ -41,14 +40,12 @@ export function App() {
 					...task,
 					isCompleted: !task.isCompleted,
 				};
-
-				const newCompletedTasksCount = taskList.filter(task => task.isCompleted !== true);
-				setCompletedTasksCount(newCompletedTasksCount.length);
-
 				return updatedTaskList;
 			}
 			return task;
 		});
+		const totalOfTasksUpdated = newTaskList.filter(item => item.isCompleted);
+		setCompletedTasksCount(totalOfTasksUpdated.length);
 		setTaskList(newTaskList);
 	}
 
