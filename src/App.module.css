@@ -1,0 +1,40 @@
+.mainContainer {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding: 5.5rem 1rem 1rem 1rem;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+
+	font-weight: 700;
+	line-height: 1.4;
+}
+
+.blueText {
+	color: var(--blue);
+}
+
+.purpleText {
+	color: var(--purple);
+}
+
+.badgeCounter {
+	margin-left: 0.5rem;
+	padding: 0.125rem 0.5rem;
+
+	color: var(--gray-200);
+	background: var(--gray-400);
+
+	border-radius: calc(2 * var(--radius));
+}
+
+.taskListContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	margin-top: 1.5rem;
+}

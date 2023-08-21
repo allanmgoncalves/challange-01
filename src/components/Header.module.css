@@ -1,0 +1,78 @@
+.header {
+	background: var(--gray-700);
+}
+
+.headerContainer {
+	max-width: 50rem;
+	max-height: 200px;
+
+	margin: 0 auto;
+	padding: 4.5rem 1rem 5rem 1rem;
+}
+
+.headerContainer img {
+	display: block;
+	margin: 0 auto;
+}
+
+.addTaskContainer {
+	display: grid;
+	grid-template-columns: 1fr 0.15fr;
+	align-items: center;
+	justify-content: flex-start;
+	margin-top: 3rem;
+}
+
+.addTaskContainer input {
+	height: 3.5rem;
+	padding: 1rem;
+	margin-right: 0.5rem;
+	font-size: 1rem;
+	line-height: 1.4;
+	color: var(--gray-100);
+	background: var(--gray-500);
+
+	border: 0;
+	border-radius: var(--radius);
+}
+
+.addTaskContainer button[type='submit'] {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+
+	height: 3.5rem;
+	padding: 1rem;
+
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.4;
+	color: var(--gray-100);
+	background: var(--blue-dark);
+
+	border: 0;
+	border-radius: var(--radius);
+
+	transition: background-color 0.175s linear;
+	cursor: pointer;
+}
+
+.addTaskContainer button[type='submit']:not([disabled]):hover {
+	background: var(--blue);
+}
+
+.addTaskContainer button[type='submit']:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+
+.addTaskContainer button[type='submit'] > span {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.addTaskContainer button[type='submit'] > span {
+		display: block;
+	}
+}

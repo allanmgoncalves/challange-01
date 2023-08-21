@@ -1,0 +1,81 @@
+.taskCard {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	padding: 1rem;
+
+	background: var(--gray-500);
+
+	border-radius: var(--radius);
+	border: 1px solid var(--gray-400);
+}
+
+.taskCard + .taskCard {
+	margin-top: 0.75rem;
+}
+
+.taskCard input[type='radio'] {
+	appearance: none;
+	-webkit-appearance: none;
+	min-width: 18px;
+	width: 18px;
+	height: 18px;
+	margin: 1.5px 0 0 0;
+	border: 1px solid var(--blue);
+	border-radius: calc(2 * var(--radius));
+	background: transparent;
+	position: relative;
+
+	transition: background-color, color, 0.175s linear;
+	cursor: pointer;
+}
+
+.taskCard input[type='radio']:hover {
+	background-color: rgba(30, 111, 159, 0.2);
+}
+
+.taskCard input[type='radio']:checked {
+	background: var(--purple-dark);
+	border: none;
+}
+.taskCard input[type='radio']:checked::after {
+	content: url('../assets/check-bold.svg');
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1.125rem;
+}
+
+.taskCard input[type='radio']:checked:hover {
+	background: var(--purple);
+}
+
+.taskCard input[type='radio']:checked + label {
+	color: var(--gray-300);
+	text-decoration: line-through;
+}
+
+.taskCard label {
+	width: 100%;
+	line-height: 1.4;
+}
+
+.taskCard button {
+	padding: 0.125rem;
+	line-height: 0;
+
+	color: var(--gray-300);
+	background: transparent;
+
+	border: 0;
+	border-radius: calc(var(--radius) / 2);
+
+	transition: background-color, color, 0.175s linear;
+	cursor: pointer;
+}
+
+.taskCard button:hover {
+	color: var(--red-danger);
+	background: var(--gray-400);
+}
