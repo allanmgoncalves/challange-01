@@ -17,7 +17,7 @@ export function App() {
 	function handleCreateNewTask(event: FormEvent) {
 		event.preventDefault();
 
-		setTaskList([...taskList, { id: uuidv4(), isCompleted: false, content: newTaskText }]);
+		setTaskList(state => [...state, { id: uuidv4(), isCompleted: false, content: newTaskText }]);
 		setNewTaskText('');
 	}
 
